@@ -71,6 +71,7 @@ class SalarySlip(TransactionBase):
 		self.base_total_in_words = money_in_words(base_total, company_currency)
 
 	def on_submit(self):
+		print("salary_slip on_submit---------------")
 		if self.net_pay < 0:
 			frappe.throw(_("Net Pay cannot be less than 0"))
 		else:
